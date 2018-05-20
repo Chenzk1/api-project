@@ -9,12 +9,10 @@ if(! $conn )
 }
 echo '数据库连接成功！';
 
-$sql = "CREATE TABLE person( ".
-        "id INT NOT NULL AUTO_INCREMENT, ".
-        "name VARCHAR(100) NOT NULL, ".
-        "department VARCHAR(40) NOT NULL, ".
-        "days INT, ".
-        "PRIMARY KEY ( id ))ENGINE=InnoDB DEFAULT CHARSET=utf8; ";
+$sql = "CREATE TABLE productionD( ".
+        "days INT NOT NULL AUTO_INCREMENT, ".
+        "num INT NOT NULL, ".
+        "PRIMARY KEY ( days ))ENGINE=InnoDB DEFAULT CHARSET=utf8; ";
 mysqli_select_db( $conn, 'myproject' );
 $retval = mysqli_query( $conn, $sql );
 if(! $retval )

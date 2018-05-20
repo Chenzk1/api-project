@@ -9,20 +9,13 @@ if(! $conn )
 }
 echo '数据库连接成功！';
 
-$sql = "CREATE TABLE reject( ".
-        "month INT NOT NULL AUTO_INCREMENT, ".
-        "totalProduct INT NOT NULL, ".
-        "qualifyProduct INT NOT NULL, ".
-        "totalWaste INT NOT NULL, ".
-        "cbls INT NOT NULL, ".
-        "qx INT NOT NULL, ".
-        "cy INT NOT NULL, ".
-        "nt INT NOT NULL, ".
-        "sf INT NOT NULL, ".
-        "cp INT NOT NULL, ".
-        "zj INT NOT NULL, ".
-        "cg INT NOT NULL, ".
-        "PRIMARY KEY ( month ))ENGINE=InnoDB DEFAULT CHARSET=utf8; ";
+$sql = "CREATE TABLE IF NOT EXISTS stopfaultreason( ".
+        "id INT NOT NULL AUTO_INCREMENT, ".
+        "reason VARCHAR(100) NOT NULL, ".
+        "time FLOAT NOT NULL, ".
+        "total FLOAT NOT NULL, ".   
+        "part VARCHAR(40) NOT NULL, ".     
+        "PRIMARY KEY ( id ))ENGINE=InnoDB DEFAULT CHARSET=utf8; ";
 mysqli_select_db( $conn, 'myproject' );
 $retval = mysqli_query( $conn, $sql );
 if(! $retval )
@@ -30,5 +23,7 @@ if(! $retval )
     die('数据表创建失败: ' . mysqli_error($conn));
 }
 echo "数据表创建成功\n";
+
+// 设置编码，防止中文乱码
 mysqli_close($conn);
 ?>
