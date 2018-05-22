@@ -16,9 +16,9 @@ $ cd api-project
 ### 数据库建设
 数据库用户名Chenzk  密码Chenzk1
 #### 方法一
-在[数据库文件目录](api-project/data/)中使用php创建数据表
+在[数据库文件目录](https://github.com/Chenzk1/api-project/tree/master/data)中使用php创建数据表
 #### 方法二
-向数据库中导入[csv目录](api-project/data/csv)中的文件
+向数据库中导入[csv目录](https://github.com/Chenzk1/api-project/tree/master/data/csv)中的文件
 
 ### 运行
 运行api.py，在浏览器中访问 http://localhost:5000
